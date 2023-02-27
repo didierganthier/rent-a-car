@@ -25,9 +25,40 @@ const login = (email, password) => async (dispatch) => {
     dispatch({
       type: types.USER_LOGIN_FAIL,
       payload:
-                error.response && error.response.data.message
-                  ? error.response.data.message
-                  : error.message,
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+const register = (name, email, password) => async (dispatch) => {
+  try {
+    dispatch({ type: types.USER_REGISTER_REQUEST });
+
+    const config = {
+      Headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+
+    const { data } = await axios.post(
+      'http://localhost:3001/auth/register',
+      { name, email, password },
+      config,
+    );
+
+    dispatch({
+      type: types.USER_REGISTER_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: types.USER_REGISTER_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
     });
   }
 };
@@ -36,4 +67,4 @@ const logout = () => (dispatch) => {
   dispatch({ type: types.USER_LOGOUT });
 };
 
-export { login, logout };
+export { login, register, logout };
