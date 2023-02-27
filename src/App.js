@@ -1,7 +1,11 @@
-export default function App() {
+import LoginScreen from './screens/LoginScreen';
+
+function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className="App">
+      <LoginScreen />
+    </div>
   );
 }
+
+export default App;
