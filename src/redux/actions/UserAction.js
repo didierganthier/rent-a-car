@@ -13,7 +13,7 @@ const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      'https://rails-production-c0ec.up.railway.app/auth',
+      'http:localhost:3001/login',
       { email, password },
       config,
     );
@@ -43,7 +43,7 @@ const register = (formData) => async (dispatch) => {
 
     const { data } = await axios({
       method: 'post',
-      url: 'https://rails-production-c0ec.up.railway.app/register',
+      url: '/register',
       data: formData,
       config,
     });

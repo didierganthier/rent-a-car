@@ -10,7 +10,7 @@ const getCars = () => async (dispatch) => {
         accept: 'application/json',
       },
     };
-    const { data } = await axios.get('https://rails-production-c0ec.up.railway.app/cars', config);
+    const { data } = await axios.get('http://localhost:3001/cars/', config);
     dispatch({
       type: types.GET_CARS_SUCCESS,
       payload: data,
