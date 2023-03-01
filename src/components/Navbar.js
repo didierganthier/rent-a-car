@@ -3,6 +3,7 @@ import { useState } from "react";
 import { CgLogIn, CgLogOut } from "react-icons/cg";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import logo from "../assets/exotic.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { auth, NavItemsAdmin, socialIcons } from "../data";
@@ -74,7 +75,7 @@ const Navbar = () => {
               open ? "w-20" : "w-12"
             } cursor-pointer duration-300 my-4 mx-auto border-rounded`}
           >
-            <p>Logo</p>
+            <img src={logo} alt="logo" />
           </div>
           {userInfo ? (
             <div className="flex flex-row items-center mt-[3rem]">
