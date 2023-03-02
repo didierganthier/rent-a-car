@@ -79,7 +79,7 @@ const HomeScreen = () => {
             >
               <NavLink className="car" to={`/car/${car.id}`}>
                 <img
-                  src={car.image.url}
+                  src={car.image}
                   className="w-full max-h-[300px] rounded-full h-96 object-cover"
                   alt="car"
                 />
