@@ -13,7 +13,7 @@ import DetailsCarScreen from './screens/DetailsCarScreen';
 import BookingScreen from './screens/BookingScreen';
 import ReservationsScreen from './screens/ReservationsScreen';
 import { getCars } from './redux/actions/CarAction';
-// import { getUsers } from './redux/actions/UserAction';
+import { getUsers } from './redux/actions/UserAction';
 import UsersScreen from './screens/UsersScreen';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // dispatch(getUsers());
+    dispatch(getUsers());
   }, []);
   return (
     <div className="App flex flex-col-reverse md:flex-row w-full">

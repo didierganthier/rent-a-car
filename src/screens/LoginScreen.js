@@ -61,18 +61,21 @@ const LoginScreen = () => {
     <div>
       {loading && <Loader />}
       <form
-        className="login shadow-md rounded px-8 pt-6 pb-8 mb-4  w-full max-w-sm mx-auto "
+        className="login shadow-md rounded px-8 pt-6 pb-8 mb-4  w-full max-w-sm mx-auto mt-[8rem] md:mt-0"
         onSubmit={handleSubmit}
       >
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="username"
+            htmlFor="email"
           >
             Email
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className={`shadow appearance-none border rounded 
+            w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline
+            ${submited && !email ? 'border-red-500 border-2' : ''}
+            `}
             id="email"
             type="email"
             placeholder="Email"
@@ -90,15 +93,18 @@ const LoginScreen = () => {
             Password
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            className={`shadow appearance-none border rounded 
+            w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline
+            ${submited && !password ? 'border-red-500 border-2' : ''}
+            `}
             id="password"
             type="password"
-            placeholder="******************"
+            placeholder="**********"
             ref={passwordRef}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          {passwordError && <InlineError error={passwordError} />}
+          {passwordError && password && <InlineError error={passwordError} />}
         </div>
         <div className="flex items-center justify-center">
           <button

@@ -13,7 +13,7 @@ const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      'http://localhost:3000/auth',
+      'http:localhost:3001/login',
       { email, password },
       config,
     );
@@ -43,13 +43,51 @@ const register = (formData) => async (dispatch) => {
 
     const { data } = await axios({
       method: 'post',
-      url: 'http://localhost:3000/users',
+      url: '/register',
       data: formData,
       config,
     });
 
     dispatch({
       type: types.USER_REGISTER_SUCCESS,
+      payload: data,
+    });
+    localStorage.setItem('userInfo', JSON.stringify(data));
+  } catch (error) {
+    dispatch({
+      type: types.USER_REGISTER_FAIL,
+      payload:
+        error.response && error.response.data.error
+          ? error.response.data.error
+          : error.error,
+    });
+  }
+};
+
+const logout = () => (dispatch) => {
+  localStorage.removeItem('userInfo');
+  dispatch({ type: types.USER_LOGOUT });
+};
+
+const getUsers = () => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: types.GET_USERS_REQUEST,
+    });
+
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
+    const { data } = await axios({
+      method: 'GET',
+      url: 'https://rails-production-c0ec.up.railway.app/users',
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    });
+    dispatch({
+      type: types.GET_USERS_SUCCESS,
       payload: data,
     });
   } catch (error) {
@@ -63,8 +101,64 @@ const register = (formData) => async (dispatch) => {
   }
 };
 
-const logout = () => (dispatch) => {
-  dispatch({ type: types.USER_LOGOUT });
+// update role user
+const updateUser = (id) => async (dispatch, getState) => {
+  try {
+    const {
+      userLogin: { userInfo },
+    } = getState();
+    const { data } = await axios({
+      method: 'PUT',
+      url: 'https://rails-production-c0ec.up.railway.app/toggle_admin',
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+      data: { id },
+    });
+    dispatch({
+      type: types.TOGGLE_USER_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: types.TOGGLE_USER_FAIL,
+      payload:
+        error.response && error.response.data.error
+          ? error.response.data.error
+          : error.error,
+    });
+  }
 };
 
-export { login, register, logout };
+// delete user
+const deleteUser = (id) => async (dispatch, getState) => {
+  try {
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
+    const { data } = await axios({
+      method: 'DELETE',
+      url: `https://rails-production-c0ec.up.railway.app/users/${id}`,
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    });
+    dispatch({
+      type: types.DELETE_USER_SUCCESS,
+      payload: data.id,
+    });
+  } catch (error) {
+    dispatch({
+      type: types.DELETE_USER_FAIL,
+      payload:
+        error.response && error.response.data.error
+          ? error.response.data.error
+          : error.error,
+    });
+  }
+};
+
+export {
+  login, register, logout, getUsers, updateUser, deleteUser,
+};
