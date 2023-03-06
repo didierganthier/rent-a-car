@@ -13,7 +13,7 @@ const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      'http:localhost:3001/login',
+      'http:localhost:3000/login',
       { email, password },
       config,
     );
