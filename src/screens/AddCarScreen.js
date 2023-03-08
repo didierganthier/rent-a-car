@@ -71,7 +71,7 @@ const AddCarScreen = ({ currentItems }) => {
           "
         >
           /**
-            You would need to take out this part out, it is currently the button that would take you to the add car page, rather you should create a navigation on the side where users can click to addd cars and it would route to add cars 
+            You would need to take out this plus button below, it is currently the button that would take you to the add car page, rather you should create a navigation on the side where users can click to addd cars and it would route to add cars 
             */
           <NavLink
             to="/addCar"
