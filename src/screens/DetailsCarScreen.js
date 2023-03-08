@@ -28,7 +28,7 @@ const DetailsCarScreen = () => {
         <div className="flex flex-col items-center md:justify-start justify-center w-full md:flex-row grow h-full lg:pt-20 lg:pb-10">
           <div className="grow  md:w-5/6 flex items-center justify-center md:px-10 rounded-full aspect-square">
             <img
-              src={carss.image?.url}
+              src={carss.image}
               alt={carss?.name}
               className="object-cover block rounded-full m-4 aspect-square w-[100%] md:ml-[40%]"
             />

@@ -1,6 +1,31 @@
 import axios from 'axios';
 import * as types from '../constants/bookingConstants';
 
+const getReservations = () => async (dispatch) => {
+  try {
+    dispatch({ type: types.RESERVATION_REQUEST });
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        accept: 'application/json',
+      },
+    };
+    const { data } = await axios.get('http://localhost:3000/reservations', config);
+    dispatch({
+      type: types.RESERVATION_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: types.RESERVATION_FAIL,
+      payload:
+        error.response && error.response.data.error
+          ? error.response.data.error
+          : error.error,
+    });
+  }
+};
+
 // Add booking car
 
 const addBooking = (FormData) => async (dispatch, getState) => {
@@ -59,4 +84,4 @@ const deleteBooking = (id) => async (dispatch, getState) => {
   }
 };
 
-export { addBooking, deleteBooking };
+export { addBooking, deleteBooking, getReservations };

@@ -74,7 +74,6 @@ const addCar = (FormData) => async (dispatch, getState) => {
     console.log(error);
   }
 };
-
 const updateCar = (carId, formData) => async (dispatch, getState) => {
   try {
     const {

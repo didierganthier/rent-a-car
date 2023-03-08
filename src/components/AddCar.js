@@ -7,7 +7,7 @@ import { addCar } from '../redux/actions/CarAction';
 
 const AddCar = () => {
   const [name, setName] = useState('');
-  const [image, setImage] = useState([]);
+  const [image, setImage] = useState('');
   const [type, setType] = useState('');
   const [description, setDescription] = useState('');
   const [brand, setBrand] = useState('');
@@ -40,9 +40,9 @@ const AddCar = () => {
   };
 
   // handle image upload
-  const handleUploadImage = (e) => {
-    setImage(e.target.files[0]);
-  };
+  // const handleUploadImage = (e) => {
+  //   setImage(e.target.files[0]);
+  // };
   return (
     <>
       {/* add from using tailwindcss */}
@@ -76,9 +76,9 @@ const AddCar = () => {
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="image"
-              type="file"
+              type="text"
               placeholder="Image"
-              onChange={handleUploadImage}
+              onChange={(e) => setImage(e.target.value)}
               multiple
             />
           </div>

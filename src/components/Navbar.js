@@ -32,12 +32,12 @@ const Navbar = () => {
       },
       {
         name: 'RESERVATIONS',
-        path: `${userInfo ? '/reservations' : '/login'}`,
+        path: '/reservations',
         icon: <GrUpdate />,
       },
       {
         name: 'BOOKING',
-        path: `${userInfo ? '/booking' : '/login'}`,
+        path: '/booking',
         icon: <BsBookHalf />,
       },
     ];

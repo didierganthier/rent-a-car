@@ -8,12 +8,6 @@ import UserListScreen from '../screens/UserListScreen';
 import Loader from './Loader';
 
 function PaginatedUsers({ itemsPerPage }) {
-  const user = useSelector((state) => state.userLogin);
-  const { userInfo } = user;
-  const adminn = userInfo?.admin;
-  if (!adminn) {
-    return <h1>NOt found</h1>;
-  }
 
   const [itemOffset, setItemOffset] = useState(0);
 
