@@ -10,7 +10,7 @@ const getCars = () => async (dispatch) => {
         accept: 'application/json',
       },
     };
-    const { data } = await axios.get('http://localhost:3000/cars/', config);
+    const { data } = await axios.get('https://rentcars.onrender.com/cars', config);
     dispatch({
       type: types.GET_CARS_SUCCESS,
       payload: data,
@@ -40,7 +40,7 @@ const deleteCar = (id) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.delete(
-      `http://127.0.0.1:3000/cars/${id}`,
+      `https://rentcars.onrender.com/cars/${id}`,
       config,
     );
     dispatch({
@@ -60,7 +60,7 @@ const addCar = (FormData) => async (dispatch, getState) => {
 
     const { data } = await axios({
       method: 'post',
-      url: 'http://127.0.0.1:3000/cars',
+      url: 'https://rentcars.onrender.com/cars',
       data: FormData,
       headers: {
         Authorization: `${userInfo.token}`,

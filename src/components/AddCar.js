@@ -39,14 +39,10 @@ const AddCar = () => {
     Navigate('/cars');
   };
 
-  // handle image upload
-  // const handleUploadImage = (e) => {
-  //   setImage(e.target.files[0]);
-  // };
   return (
-    <>
+    <div className='flex justify-center h-screen bg-no-repeat bg-cover bg-[url("https://images.unsplash.com/photo-1524345591067-da3f166c0e42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80")] items-center'>
       {/* add from using tailwindcss */}
-      <form onSubmit={handleSubmit} className="w-full max-w-lg">
+      <form onSubmit={handleSubmit} className="w-full max-w-lg shadow-xl py-10 px-4 rounded-xl bg-black bg-opacity-30 backdrop-filter backdrop-blur-lg">
         <div className="flex flex-wrap -mx-3 mb-2">
           <div className="w-full px-3">
             <label
@@ -56,7 +52,7 @@ const AddCar = () => {
               Name
             </label>
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              className="appearance-none block w-full bg-gray-200 border border-gray-200 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="name"
               type="text"
               placeholder="Name"
@@ -155,10 +151,10 @@ const AddCar = () => {
             />
           </div>
         </div>
-        <div className="flex flex-wrap -mx-3 mb-2">
-          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <div className="flex justify-center items-center">
+          <div className="flex justify-center w-full mb-6 md:mb-0">
             <button
-              className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              className="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-8 rounded"
               type="submit"
             >
               Add Car
@@ -166,7 +162,7 @@ const AddCar = () => {
           </div>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 
