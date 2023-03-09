@@ -15,7 +15,7 @@ const getReservations = () => async (dispatch, getState) => {
         Authorization: `Barear ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get('http://localhost:3000/reservations', config);
+    const { data } = await axios.get('https://rentcars.onrender.com/reservations', config);
     dispatch({
       type: types.RESERVATION_SUCCESS,
       payload: data,
@@ -45,7 +45,7 @@ const addBooking = (FormData) => async (dispatch, getState) => {
 
     const { data } = await axios({
       method: 'POST',
-      url: 'http://127.0.0.1:3000/reservations',
+      url: 'https://rentcars.onrender.com/reservations',
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -75,7 +75,7 @@ const deleteBooking = (id) => async (dispatch, getState) => {
 
     const { data } = await axios({
       method: 'DELETE',
-      url: `http://127.0.0.1:3000/reservations/${id}`,
+      url: `https://rentcars.onrender.com/reservations/${id}`,
       headers: {
         Authorization: `Barear ${userInfo.token}`,
       },
