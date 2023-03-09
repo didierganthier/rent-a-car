@@ -50,7 +50,7 @@ const HomeScreen = () => {
         </p>
         <hr
           className="
-            w-20 h-1 mt-4 bg-[#98bd2a]
+            w-20 h-1 mt-4 bg-[#256BDA]
             "
         />
       </div>
@@ -60,6 +60,7 @@ const HomeScreen = () => {
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={'auto'}
+          initialSlide={1}
           coverflowEffect={{
             rotate: 50,
             stretch: 0,
@@ -67,15 +68,15 @@ const HomeScreen = () => {
             modifier: 1,
             slideShadows: true,
           }}
-          pagination={true}
+          
           modules={[EffectCoverflow, Pagination]}
-          className="mySwiper max-w-[400px] md:max-w-[1000px] lg:max-w-full overflow-hidden relative"
+          className="mySwiper max-w-[400px] md:max-w-[1000px] lg:max-w-full overflow-hidden relative" style={{ margin: '0 auto' }}
           ref={swiperRef}
         >
           {cars.map((car) => (
             <SwiperSlide
               key={car.id}
-              className="max-w-[300px]   mr-[60px] ml-[1.2rem]"
+              className="max-w-[300px] mr-[60px] ml-[1.2rem] shadow-md rounded-2xl overflow-hidden px-4 py-2"
             >
               <NavLink className="car" to={`/car/${car.id}`}>
                 <img
@@ -100,8 +101,8 @@ const HomeScreen = () => {
 
           <div
             className="absolute text-[1.8rem]
-                            top-1/3 left-0 z-10 bg-[#98bd2a] text-white
-                            rounded-full p-3 cursor-pointer
+                            top-1/3 left-0 shadow-md z-10 text-[#256BDA]
+                            rounded-full p-3 cursor-pointer hover:animate-bounce
                             hidden md:block
                             "
             onClick={handlePrev}
@@ -109,9 +110,9 @@ const HomeScreen = () => {
             <BsFillArrowLeftCircleFill />
           </div>
           <div
-            className="absolute text-[1.8rem] text-white
-                            top-1/3 right-0 z-10 rotate-180 bg-[#98bd2a]
-                            rounded-full p-3 cursor-pointer
+            className="absolute text-[1.8rem]
+                            top-1/3 right-0 shadow-md z-10 rotate-180 text-[#256BDA]
+                            rounded-full p-3 cursor-pointer hover:animate-bounce
                             hidden md:block
                             "
             onClick={handleNext}
