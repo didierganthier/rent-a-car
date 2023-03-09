@@ -149,7 +149,7 @@ You can deploy this project using:
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **It will allow users to rent a car.**
+- [ ] **Integrate externalAPI of another booking site**
 - [ ] **It will allows users to give a review for a specific car.**
 - [ ] **Allow summary of review on a ceratin period**
   
