@@ -15,7 +15,7 @@ import ReservationsScreen from './screens/ReservationsScreen';
 import { getCars } from './redux/actions/CarAction';
 import UsersScreen from './screens/UsersScreen';
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCars());
@@ -40,6 +40,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
