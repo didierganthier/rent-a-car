@@ -10,7 +10,7 @@ const getCars = () => async (dispatch) => {
         accept: 'application/json',
       },
     };
-    const { data } = await axios.get('http://localhost:3001/cars/', config);
+    const { data } = await axios.get('http://localhost:3000/cars/', config);
     dispatch({
       type: types.GET_CARS_SUCCESS,
       payload: data,
@@ -36,11 +36,11 @@ const deleteCar = (id) => async (dispatch, getState) => {
       headers: {
         'Content-Type': 'application/json',
         accept: 'application/json',
-        Authorization: `Bearer ${userInfo.token}`,
+        Authorization: `${userInfo.token}`,
       },
     };
     const { data } = await axios.delete(
-      `https://rails-production-c0ec.up.railway.app/cars/${id}`,
+      `http://127.0.0.1:3000/cars/${id}`,
       config,
     );
     dispatch({
@@ -60,10 +60,10 @@ const addCar = (FormData) => async (dispatch, getState) => {
 
     const { data } = await axios({
       method: 'post',
-      url: 'https://rails-production-c0ec.up.railway.app/cars',
+      url: 'http://127.0.0.1:3000/cars',
       data: FormData,
       headers: {
-        Authorization: `Bearer ${userInfo.token}`,
+        Authorization: `${userInfo.token}`,
       },
     });
     dispatch({
@@ -74,7 +74,6 @@ const addCar = (FormData) => async (dispatch, getState) => {
     console.log(error);
   }
 };
-
 const updateCar = (carId, formData) => async (dispatch, getState) => {
   try {
     const {

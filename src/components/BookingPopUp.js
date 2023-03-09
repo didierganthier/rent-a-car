@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { AiOutlineCloseSquare } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addBooking } from '../redux/actions/BookingAction';
+import { addBooking, getReservations } from '../redux/actions/BookingAction';
 
 const BookingPopUp = ({ onClose, carId }) => {
   const [startdate, setStartDate] = useState('');
@@ -25,6 +25,7 @@ const BookingPopUp = ({ onClose, carId }) => {
     dispatch(addBooking(formData));
     onClose();
     navigate('/reservations');
+    dispatch(getReservations())
   };
   return (
     <div className="bg-white relative md:w-[500px] md:h-[400px] rounded-lg shadow-lg z-40">

@@ -7,12 +7,6 @@ import AddCarScreen from '../screens/AddCarScreen';
 import Loader from './Loader';
 
 function PaginatedItems({ itemsPerPage }) {
-  const user = useSelector((state) => state.userLogin);
-  const { userInfo } = user;
-  const admin = userInfo?.admin;
-  if (!admin) {
-    return <h1>NOt found</h1>;
-  }
   const [itemOffset, setItemOffset] = useState(0);
 
   const carList = useSelector((state) => state.carList);

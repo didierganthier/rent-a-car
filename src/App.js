@@ -13,7 +13,6 @@ import DetailsCarScreen from './screens/DetailsCarScreen';
 import BookingScreen from './screens/BookingScreen';
 import ReservationsScreen from './screens/ReservationsScreen';
 import { getCars } from './redux/actions/CarAction';
-import { getUsers } from './redux/actions/UserAction';
 import UsersScreen from './screens/UsersScreen';
 
 function App() {
@@ -22,9 +21,6 @@ function App() {
     dispatch(getCars());
   }, []);
 
-  useEffect(() => {
-    dispatch(getUsers());
-  }, []);
   return (
     <div className="App flex flex-col-reverse md:flex-row w-full">
       <Navbar />

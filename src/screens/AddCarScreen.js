@@ -70,6 +70,9 @@ const AddCarScreen = ({ currentItems }) => {
           lg:mt-[90px] lg:ml-[150px]
           "
         >
+          /**
+            You would need to take out this plus button below, it is currently the button that would take you to the add car page, rather you should create a navigation on the side where users can click to addd cars and it would route to add cars 
+            */
           <NavLink
             to="/addCar"
             className="flex flex-wrap no-underline hover:no-underline"

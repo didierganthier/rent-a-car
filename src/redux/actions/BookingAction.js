@@ -1,6 +1,36 @@
 import axios from 'axios';
 import * as types from '../constants/bookingConstants';
 
+const getReservations = () => async (dispatch, getState) => {
+  try {
+    dispatch({ type: types.RESERVATION_REQUEST });
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        accept: 'application/json',
+        Authorization: `Barear ${userInfo.token}`,
+      },
+    };
+    const { data } = await axios.get('http://localhost:3000/reservations', config);
+    dispatch({
+      type: types.RESERVATION_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: types.RESERVATION_FAIL,
+      payload:
+        error.response && error.response.data.error
+          ? error.response.data.error
+          : error.error,
+    });
+  }
+};
+
 // Add booking car
 
 const addBooking = (FormData) => async (dispatch, getState) => {
@@ -15,7 +45,7 @@ const addBooking = (FormData) => async (dispatch, getState) => {
 
     const { data } = await axios({
       method: 'POST',
-      url: 'https://rails-production-c0ec.up.railway.app/reservations',
+      url: 'http://127.0.0.1:3000/reservations',
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },
@@ -45,7 +75,7 @@ const deleteBooking = (id) => async (dispatch, getState) => {
 
     const { data } = await axios({
       method: 'DELETE',
-      url: `https://rails-production-c0ec.up.railway.app/reservations/${id}`,
+      url: `http://127.0.0.1:3000/reservations/${id}`,
       headers: {
         Authorization: `Barear ${userInfo.token}`,
       },
@@ -59,4 +89,4 @@ const deleteBooking = (id) => async (dispatch, getState) => {
   }
 };
 
-export { addBooking, deleteBooking };
+export { addBooking, deleteBooking, getReservations };

@@ -12,11 +12,12 @@ const login = (email, password) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post(
-      'http:localhost:3001/login',
-      { email, password },
+    const { data } = await axios({
+      method: 'post',
+      url: 'http://127.0.0.1:3000/login',
+      data: { user: { email, password } },
       config,
-    );
+    });
 
     dispatch({
       type: types.USER_LOGIN_SUCCESS,
@@ -43,7 +44,7 @@ const register = (formData) => async (dispatch) => {
 
     const { data } = await axios({
       method: 'post',
-      url: '/register',
+      url: 'http://127.0.0.1:3000/signup',
       data: formData,
       config,
     });

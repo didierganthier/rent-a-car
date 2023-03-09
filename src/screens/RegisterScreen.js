@@ -11,7 +11,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import InlineError from '../components/InlineError';
 import { register } from '../redux/actions/UserAction';
 import {
-  validateAge,
   validateComfirmePassword,
   validateEmail,
   validateFullName,
@@ -53,8 +52,6 @@ const RegisterScreen = () => {
     formData.append('user[name]', fullName);
     formData.append('user[email]', email);
     formData.append('user[password]', password);
-    formData.append('user[avatar]', avatar);
-    formData.append('user[date_of_birth]', age);
     setSubmited(true);
     if (valid) {
       dispatch(register(formData));
@@ -73,22 +70,19 @@ const RegisterScreen = () => {
     validateEmail({ email, setEmailError });
     validateFullName({ fullName, setFullNameError });
     validatePassword({ password, setPasswordError });
-    validateAge({ age, setAgeError });
     validateComfirmePassword({ password, cpassword, setCPasswordError})
 
     if (
       emailError ||
       passwordError ||
       fullNameError ||
-      ageError ||
       cpasswordError ||
       !email ||
       !password ||
       !cpassword ||
-      !fullName ||
-      !age
+      !fullName 
     ) {
-      setValid(false);
+      setValid(true);
     } else {
       setValid(true);
     }
@@ -100,13 +94,11 @@ const RegisterScreen = () => {
     emailError,
     passwordError,
     fullNameError,
-    ageError,
     userInfo,
     navigate,
     email,
     password,
     fullName,
-    age,
     cpasswordError,
     cpassword,
   ]);
@@ -123,20 +115,6 @@ const RegisterScreen = () => {
         className="register shadow-md rounded px-8 pt-6 pb-4 mb-4 w-full max-w-sm mx-auto"
         onSubmit={handleSubmitt}
       >
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2 cursor-pointer"
-            htmlFor="files"
-          >
-            Avatar
-          </label>
-          <input
-            type="file"
-            accept="image/*"
-            multiple={false}
-            onChange={onImageChange}
-          />
-        </div>
 
         <div className="mb-4">
           <label
@@ -175,34 +153,6 @@ const RegisterScreen = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </div>
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="date"
-          >
-            Date Of Birth
-          </label>
-          <input
-            type="text"
-            value={dateFormat(age)}
-            readOnly
-            onClick={() => setIsOpen(true)}
-            className={`shadow appearance-none border rounded 
-            w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline
-            `}
-          />
-          <DatePicker
-            value={age}
-            onChange={(age) => setAge(age)}
-            isOpen={isOpen}
-            onClose={() => setIsOpen(false)}
-            defaultValue={new Date(2022, 8, 8)}
-            maxDate={new Date(2023, 0, 10)}
-            headerFormat="DD MM dd"
-          />
-
-          {submited && ageError && <InlineError error={ageError} />}
         </div>
         <div className="mb-4">
           <label
