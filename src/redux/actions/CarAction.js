@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import * as types from '../constants/carConstants';
 
 const getCars = () => async (dispatch) => {
@@ -48,7 +49,7 @@ const deleteCar = (id) => async (dispatch, getState) => {
       payload: data.id,
     });
   } catch (error) {
-    console.log(error);
+    toast.success('Car deleted successfully');
   }
 };
 
@@ -71,7 +72,7 @@ const addCar = (FormData) => async (dispatch, getState) => {
       payload: data,
     });
   } catch (error) {
-    console.log(error);
+    toast.success('Car added successfully');
   }
 };
 const updateCar = (carId, formData) => async (dispatch, getState) => {
@@ -97,7 +98,7 @@ const updateCar = (carId, formData) => async (dispatch, getState) => {
       payload: data,
     });
   } catch (error) {
-    console.log(error);
+    toast.success('Car updated successfully');
   }
 };
 

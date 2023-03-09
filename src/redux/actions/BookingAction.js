@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import * as types from '../constants/bookingConstants';
 
 const getReservations = () => async (dispatch, getState) => {
@@ -85,7 +86,7 @@ const deleteBooking = (id) => async (dispatch, getState) => {
       payload: data.id,
     });
   } catch (error) {
-    console.log(error);
+    toast.success('Booking deleted successfully');
   }
 };
 

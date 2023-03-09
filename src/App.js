@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable import/extensions */
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
