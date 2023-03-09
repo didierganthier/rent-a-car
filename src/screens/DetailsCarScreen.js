@@ -79,7 +79,7 @@ const DetailsCarScreen = () => {
       )}
       <div
         className="fixed text-[1.8rem]
-                            bottom-14 left-60 z-10 bg-[#98bd2a] text-white
+                            bottom-14 left-60 z-10 bg-[#256BDA] shadow-xl animate-bounce text-white
                             rounded-full p-3 cursor-pointer
                             hidden md:block
                             "
