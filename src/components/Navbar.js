@@ -24,55 +24,52 @@ const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const navbarItems = [
-      {
-        name: 'MODELS',
-        path: '/',
-        icon: <img src="https://cdn-icons-png.flaticon.com/512/1048/1048313.png" width={24} height={24}/>,
-      },
-      {
-        name: 'RESERVATIONS',
-        path: `${userInfo ? '/reservations' : '/login'}`,
-        icon: <img src="https://cdn-icons-png.flaticon.com/512/1586/1586602.png" width={24} height={24}/>,
-      },
-      {
-        name: 'BOOKING',
-        path: `${userInfo ? '/booking' : '/login'}`,
-        icon: <img src="https://cdn-icons-png.flaticon.com/512/2460/2460875.png" width={24} height={24}/>,
-      },
-    ];
+    {
+      name: 'MODELS',
+      path: '/',
+      icon: <img src="https://cdn-icons-png.flaticon.com/512/1048/1048313.png" width={24} height={24} />,
+    },
+    {
+      name: 'RESERVATIONS',
+      path: `${userInfo ? '/reservations' : '/login'}`,
+      icon: <img src="https://cdn-icons-png.flaticon.com/512/1586/1586602.png" width={24} height={24} />,
+    },
+    {
+      name: 'BOOKING',
+      path: `${userInfo ? '/booking' : '/login'}`,
+      icon: <img src="https://cdn-icons-png.flaticon.com/512/2460/2460875.png" width={24} height={24} />,
+    },
+  ];
 
   const onLogoutHandler = () => {
     dispatch(logout());
     notify();
     navigate("/");
   };
+  
   return (
     <>
       <div className="max-h-[95vh] hidden md:block">
         <div
-          className={`${
-            open ? "w-[15rem]" : "w-[3.2rem]"
-          } h-screen border-r-2 border-slate-300 bg-white relative duration-300 `}
+          className={`${open ? "w-[15rem]" : "w-[3.2rem]"
+            } h-screen border-r-2 border-slate-300 bg-white relative duration-300 `}
         ></div>
       </div>
       <div className="md:fixed hidden md:block max-h-[95vh]">
         <div
-          className={`${
-            open ? "w-[15rem]" : "w-[3.2rem]"
-          } h-screen border-r-2 border-slate-300 bg-white relative duration-300 `}
+          className={`${open ? "w-[15rem]" : "w-[3.2rem]"
+            } h-screen border-r-2 border-slate-300 bg-white relative duration-300 `}
         >
           <div className="bg-white rounded-full max-w-[70px] -right-4 top-2  shadow-lg  p-3 absolute">
             <FiChevronsLeft
-              className={`cursor-pointer -right-0 top-9 w-9 font-medium text-2xl ${
-                !open && "rotate-180"
-              }`}
+              className={`cursor-pointer -right-0 top-9 w-9 font-medium text-2xl ${!open && "rotate-180"
+                }`}
               onClick={() => setOpen(!open)}
             />
           </div>
           <div
-            className={`${
-              open ? "w-20" : "w-12"
-            } cursor-pointer duration-300 my-4 mx-auto border-rounded`}
+            className={`${open ? "w-20" : "w-12"
+              } cursor-pointer duration-300 my-4 mx-auto border-rounded`}
           >
             <img src="https://cdn-icons-png.flaticon.com/512/7371/7371714.png" alt="logo" />
           </div>
@@ -84,28 +81,25 @@ const Navbar = () => {
               ${open ? "w-[55px] h-[55px]" : "w-[40px] h-[40px]"}
               `}
               >
-                                {
-                userInfo?.avatar?.url ? (
-                  <img
-                    src={userInfo?.avatar?.url}
-                    alt="avatar"
-                    className={`rounded-full ${
-                      open ? 'w-[55px] h-[55px]' : 'w-[40px] h-[40px]'
-                    }`}
-                  />
-                ) : (
-                  <BsFillPersonFill
-                    className={`${
-                      open ? 'w-[55px] h-[55px]' : 'w-[40px] h-[40px]'
-                    } text-slate-500 p-2 bg-white shadow-lg rounded-full m-1`}
-                  />
-                )
-              }
+                {
+                  userInfo?.avatar?.url ? (
+                    <img
+                      src={userInfo?.avatar?.url}
+                      alt="avatar"
+                      className={`rounded-full ${open ? 'w-[55px] h-[55px]' : 'w-[40px] h-[40px]'
+                        }`}
+                    />
+                  ) : (
+                    <BsFillPersonFill
+                      className={`${open ? 'w-[55px] h-[55px]' : 'w-[40px] h-[40px]'
+                        } text-slate-500 p-2 bg-white shadow-lg rounded-full m-1`}
+                    />
+                  )
+                }
               </div>
               <p
-                className={`${
-                  !open && "hidden"
-                } origin-left duration-200 text-sm mx-3 font-medium`}
+                className={`${!open && "hidden"
+                  } origin-left duration-200 text-sm mx-3 font-medium`}
               >
                 {userInfo?.name}
               </p>
@@ -117,18 +111,16 @@ const Navbar = () => {
               {navbarItems.map((item) => (
                 <NavLink
                   key={item.name}
-                  className={`text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 shadow-md rounded-xl ${
-                    item.gap ? "mt-9" : "mt-2"
-                  }`}
+                  className={`text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 shadow-md rounded-xl ${item.gap ? "mt-9" : "mt-2"
+                    }`}
                   to={item.path}
                 >
                   <span className="text-black font-extrabold text-xl ml-1">
                     {item.icon}
                   </span>
                   <span
-                    className={`${
-                      !open && "hidden"
-                    } origin-left duration-200 text-base font-semibold text-center`}
+                    className={`${!open && "hidden"
+                      } origin-left duration-200 text-base font-semibold text-center`}
                   >
                     {item.name}
                   </span>
@@ -140,18 +132,16 @@ const Navbar = () => {
                 {auth.map((item) => (
                   <NavLink
                     key={item.name}
-                    className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 shadow-md rounded-xl ${
-                      item.gap ? "mt-9" : "mt-2"
-                    }`}
+                    className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 shadow-md rounded-xl ${item.gap ? "mt-9" : "mt-2"
+                      }`}
                     to={item.path}
                   >
                     <span className="text-black font-extrabold text-xl ml-1">
                       {item.icon}
                     </span>
                     <span
-                      className={`${
-                        !open && "hidden"
-                      } origin-left duration-200 text-base font-semibold text-center text-slate-800`}
+                      className={`${!open && "hidden"
+                        } origin-left duration-200 text-base font-semibold text-center text-slate-800`}
                     >
                       {item.name}
                     </span>
@@ -159,9 +149,24 @@ const Navbar = () => {
                 ))}
               </ul>
             ) : (
-              <ul className="pt-6">
+              <ul className="pt-6 flex flex-col gap-4">
                 <button
-                  className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 hover:bg-gray-400 rounded-bl-lg w-full
+                  className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 shadow-xl rounded-xl w-full
+                    `}
+                  onClick={() => navigate("/addcar")}
+                >
+                  <span className="text-black font-extrabold text-xl ml-1">
+                    <img src="https://cdn-icons-png.flaticon.com/128/4210/4210903.png" width={24} height={24} />
+                  </span>
+                  <span
+                    className={`${!open && "hidden"
+                      } origin-left duration-200 text-base font-semibold text-center text-slate-800`}
+                  >
+                    Add Car
+                  </span>
+                </button>
+                <button
+                  className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 shadow-xl rounded-xl w-full
                     `}
                   onClick={onLogoutHandler}
                 >
@@ -169,9 +174,8 @@ const Navbar = () => {
                     <CgLogOut />
                   </span>
                   <span
-                    className={`${
-                      !open && "hidden"
-                    } origin-left duration-200 text-base font-semibold text-center text-slate-800`}
+                    className={`${!open && "hidden"
+                      } origin-left duration-200 text-base font-semibold text-center text-slate-800`}
                   >
                     Logout
                   </span>
@@ -187,9 +191,8 @@ const Navbar = () => {
                 {socialIcons.map((icons, index) => (
                   <li
                     key={index}
-                    className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 hover:shadow-md rounded-bl-lg ${
-                      icons.gap ? "mt-9" : "mt-2"
-                    }`}
+                    className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 hover:shadow-md rounded-bl-lg ${icons.gap ? "mt-9" : "mt-2"
+                      }`}
                   >
                     <span
                       className={`text-black font-extrabold text-xl ml-1  
@@ -201,9 +204,8 @@ const Navbar = () => {
                 ))}
               </ul>
               <p
-                className={`${
-                  !open && "hidden"
-                } origin-left duration-200 text-sm mt-4 mx-3 font-medium`}
+                className={`${!open && "hidden"
+                  } origin-left duration-200 text-sm mt-4 mx-3 font-medium`}
               >
                 ©Microverse Copyright 2022
               </p>
