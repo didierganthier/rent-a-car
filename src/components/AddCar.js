@@ -56,6 +56,7 @@ const AddCar = () => {
               id="name"
               type="text"
               placeholder="Name"
+              required
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -67,13 +68,14 @@ const AddCar = () => {
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               htmlFor="image"
             >
-              Image
+              Image Link
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="image"
               type="text"
-              placeholder="Image"
+              placeholder="Image Link"
+              required
               onChange={(e) => setImage(e.target.value)}
               multiple
             />
@@ -92,6 +94,7 @@ const AddCar = () => {
               id="type"
               type="text"
               placeholder="Type"
+              required
               value={type}
               onChange={(e) => setType(e.target.value)}
             />
@@ -110,6 +113,7 @@ const AddCar = () => {
               id="description"
               type="text"
               placeholder="Description"
+              required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -128,6 +132,7 @@ const AddCar = () => {
               id="brand"
               type="text"
               placeholder="Brand"
+              required
               value={brand}
               onChange={(e) => setBrand(e.target.value)}
             />
@@ -146,6 +151,7 @@ const AddCar = () => {
               id="daily_rate"
               type="text"
               placeholder="Daily Rate"
+              required
               value={dailyrate}
               onChange={(e) => setDailyrate(e.target.value)}
             />
