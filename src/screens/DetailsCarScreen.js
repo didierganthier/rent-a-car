@@ -30,7 +30,7 @@ const DetailsCarScreen = () => {
             <img
               src={carss.image}
               alt={carss?.name}
-              className="object-cover block rounded-full m-4 aspect-square w-[100%] md:ml-[40%]"
+              className="object-cover block rounded-2xl shadow-2xl hover:scale-105 m-4 aspect-square w-[100%] md:ml-[40%]"
             />
           </div>
           <div className="flex flex-col w-full items-start md:items-end  md:mr-10 py-10 px-10 lg:px-0 text-center">
@@ -42,45 +42,38 @@ const DetailsCarScreen = () => {
                 {carss?.description}
               </p>
             </div>
-            <div className="flex flex-col grow md:items-end ">
-              <div className="grow flex flex-col rounded-2xl overflow-hidden border">
-                <div className="flex justify-center items-center gap-4 border-b">
-                  <h3 className="font-bold my-4">Other Details</h3>
-                </div>
-                <ul className="grow-0 p-4">
-                  <li className="odd:bg-gray-200 bg-gray-100 py-2 px-4">
-                    <div className="flex items-center justify-center">
-                      <span className="pr-10">Brand</span>
-                      <span className="text-right">{carss?.brand}</span>
-                    </div>
-                  </li>
-                  <li className="odd:bg-gray-200 bg-gray-100 py-2 px-4">
-                    <div className="flex items-center justify-center">
-                      <span className="pr-10">Daily Rate</span>
-                      <span className="text-right">${carss?.daily_rate}</span>
-                    </div>
-                  </li>
-                </ul>
+            <div class="flex flex-col items-end rounded-xl border overflow-hidden shadow-2xl">
+              <div class="flex flex-col items-center justify-center bg-blue-500 px-2 text-white py-4">
+                <h3 class="font-bold">Other Details</h3>
               </div>
-              <p className="flex items-center gap-2 mt-1">
-                DISCOVER MORE MODELS{' '}
-                <AiOutlineRight className="text-yellow-500" />
+              <ul class="flex-grow-0 p-4 bg-white shadow-lg rounded-xl mt-4">
+                <li class="bg-gray-100 py-2 px-4 odd:bg-gray-200">
+                  <div class="flex justify-between">
+                    <span>Brand</span>
+                    <span class="font-bold">{carss?.brand}</span>
+                  </div>
+                </li>
+                <li class="bg-gray-100 py-2 px-4 odd:bg-gray-200">
+                  <div class="flex justify-between">
+                    <span>Daily Rate</span>
+                    <span class="font-bold">${carss?.daily_rate}</span>
+                  </div>
+                </li>
+              </ul>
+              <p class="flex items-center justify-end gap-2 py-2 px-4 bg-blue-500 text-white rounded-xl my-10 mx-4">
+                DISCOVER MORE MODELS <AiOutlineRight />
               </p>
-              <img src={pic} alt="canva" />
-              <div className="my-6 flex justify-center">
-                <button
-                  type="button"
-                  className="bg-lime-500 text-white hover:bg-lime-400 px-6 py-2 rounded-full font-semibold min-w-[10rem] transition-colors border-2 border-transparent mb-4"
-                  onClick={() => setBooking(true)}
-                >
-                  <div className="flex items-center gap-3 justify-center">
-                    <SlSettings />
+              <img src={pic} alt="canva" class="w-full h-auto" />
+              <div class="my-6 flex justify-center">
+                <button type="button" class="bg-blue-500 text-white hover:bg-blue-400 px-6 py-2 rounded-full font-semibold transition-colors border-2 border-transparent">
+                  <div class="flex items-center gap-4 justify-center">
                     <span>Reserve</span>
                     <BsArrowRightCircleFill />
                   </div>
                 </button>
               </div>
             </div>
+
           </div>
         </div>
       )}
