@@ -1,13 +1,18 @@
 import axios from 'axios';
 import * as types from '../constants/bookingConstants';
 
-const getReservations = () => async (dispatch) => {
+const getReservations = () => async (dispatch, getState) => {
   try {
     dispatch({ type: types.RESERVATION_REQUEST });
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
     const config = {
       headers: {
         'Content-Type': 'application/json',
         accept: 'application/json',
+        Authorization: `Barear ${userInfo.token}`,
       },
     };
     const { data } = await axios.get('http://localhost:3000/reservations', config);

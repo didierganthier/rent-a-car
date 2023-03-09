@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 import { Routes, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import HomeScreen from './screens/HomeScreen';
@@ -13,8 +13,8 @@ import DetailsCarScreen from './screens/DetailsCarScreen';
 import BookingScreen from './screens/BookingScreen';
 import ReservationsScreen from './screens/ReservationsScreen';
 import { getCars } from './redux/actions/CarAction';
-import { getUsers } from './redux/actions/UserAction';
 import UsersScreen from './screens/UsersScreen';
+import { getReservations } from './redux/actions/BookingAction';
 
 function App() {
   const dispatch = useDispatch();
@@ -22,9 +22,10 @@ function App() {
     dispatch(getCars());
   }, []);
 
-  useEffect(() => {
-    dispatch(getUsers());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getReservations());
+  // }, []);
+
   return (
     <div className="App flex flex-col-reverse md:flex-row w-full">
       <Navbar />
