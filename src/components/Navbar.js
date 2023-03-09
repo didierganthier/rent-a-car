@@ -27,17 +27,17 @@ const Navbar = () => {
       {
         name: 'MODELS',
         path: '/',
-        icon: <AiFillCar />,
+        icon: <img src="https://cdn-icons-png.flaticon.com/512/1048/1048313.png" width={24} height={24}/>,
       },
       {
         name: 'RESERVATIONS',
         path: `${userInfo ? '/reservations' : '/login'}`,
-        icon: <GrUpdate />,
+        icon: <img src="https://cdn-icons-png.flaticon.com/512/1586/1586602.png" width={24} height={24}/>,
       },
       {
         name: 'BOOKING',
         path: `${userInfo ? '/booking' : '/login'}`,
-        icon: <BsBookHalf />,
+        icon: <img src="https://cdn-icons-png.flaticon.com/512/2460/2460875.png" width={24} height={24}/>,
       },
     ];
 
@@ -117,7 +117,7 @@ const Navbar = () => {
               {navbarItems.map((item) => (
                 <NavLink
                   key={item.name}
-                  className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 hover:bg-gray-400 rounded-bl-lg ${
+                  className={`text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 shadow-md rounded-xl ${
                     item.gap ? "mt-9" : "mt-2"
                   }`}
                   to={item.path}
@@ -128,56 +128,19 @@ const Navbar = () => {
                   <span
                     className={`${
                       !open && "hidden"
-                    } origin-left duration-200 text-base font-semibold text-center text-slate-800`}
+                    } origin-left duration-200 text-base font-semibold text-center`}
                   >
                     {item.name}
                   </span>
                 </NavLink>
               ))}
             </ul>
-            {/* Admin section */}
-            {/* ********************************* */}
-            <div>
-              {admin ? (
-                <ul className="pt-6">
-                  <li
-                    className={`${
-                      !open && "hidden"
-                    } origin-left duration-200 text-base font-bold text-center text-slate-800`}
-                  >
-                    Admin
-                  </li>
-                  {NavItemsAdmin.map((item) => (
-                    <NavLink
-                      key={item.name}
-                      className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 hover:bg-gray-400 rounded-bl-lg ${
-                        item.gap ? "mt-9" : "mt-2"
-                      }`}
-                      to={item.path}
-                    >
-                      <span className="text-black font-extrabold text-xl ml-1">
-                        {item.icon}
-                      </span>
-                      <span
-                        className={`${
-                          !open && "hidden"
-                        } origin-left duration-200 text-base font-semibold text-center text-slate-800`}
-                      >
-                        {item.name}
-                      </span>
-                    </NavLink>
-                  ))}
-                </ul>
-              ) : null}
-            </div>
-            {/* ********************************* */}
-            {/* End Admin section */}
             {!userInfo ? (
               <ul className="pt-6">
                 {auth.map((item) => (
                   <NavLink
                     key={item.name}
-                    className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 hover:bg-gray-500 rounded-bl-lg ${
+                    className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 shadow-md rounded-xl ${
                       item.gap ? "mt-9" : "mt-2"
                     }`}
                     to={item.path}
@@ -240,9 +203,9 @@ const Navbar = () => {
               <p
                 className={`${
                   !open && "hidden"
-                } origin-left duration-200 text-sm mx-3 font-medium`}
+                } origin-left duration-200 text-sm mt-4 mx-3 font-medium`}
               >
-                Microverse Copyright 2022
+                ©Microverse Copyright 2022
               </p>
             </div>
           </nav>
