@@ -16,12 +16,17 @@ import { EffectCoverflow, Pagination } from 'swiper';
 
 const HomeScreen = () => {
   const swiperRef = useRef(null);
+  const dispatch = useDispatch();
 
   const handlePrev = () => {
     swiperRef.current.swiper.slideNext();
   };
   const handleNext = () => {
     swiperRef.current.swiper.slidePrev();
+  };
+
+  const handleDelete = (id) => {
+    dispatch(deleteCar(id));
   };
 
   const carList = useSelector((state) => state.carList);

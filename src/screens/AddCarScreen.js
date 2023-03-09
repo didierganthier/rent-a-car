@@ -46,13 +46,6 @@ const AddCarScreen = ({ currentItems }) => {
           </NavLink>
           <div className="p-2">
             <div className="flex gap-4 justify-end">
-              {/* <button
-                type="button"
-                onClick={() => navigate(`/editCar/${car.id}`)}
-                className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
-              >
-                Edit
-              </button> */}
               <button
                 type="button"
                 onClick={() => handleDelete(car.id)}

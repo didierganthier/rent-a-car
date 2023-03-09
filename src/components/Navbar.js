@@ -46,7 +46,7 @@ const Navbar = () => {
     notify();
     navigate("/");
   };
-  
+
   return (
     <>
       <div className="max-h-[95vh] hidden md:block">
@@ -150,6 +150,21 @@ const Navbar = () => {
               </ul>
             ) : (
               <ul className="pt-6 flex flex-col gap-4">
+                <button
+                  className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 shadow-xl rounded-xl w-full
+                    `}
+                  onClick={() => navigate("/cars")}
+                >
+                  <span className="text-black font-extrabold text-xl ml-1">
+                    <img src="https://cdn-icons-png.flaticon.com/128/6460/6460112.png" width={24} height={24} />
+                  </span>
+                  <span
+                    className={`${!open && "hidden"
+                      } origin-left duration-200 text-base font-semibold text-center text-slate-800`}
+                  >
+                    Delete Cars
+                  </span>
+                </button>
                 <button
                   className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 shadow-xl rounded-xl w-full
                     `}
