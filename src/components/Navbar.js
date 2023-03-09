@@ -187,7 +187,7 @@ const Navbar = () => {
                 {socialIcons.map((icons, index) => (
                   <li
                     key={index}
-                    className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 hover:bg-gray-400 rounded-bl-lg ${
+                    className={`text-white text-sm flex items-center duration-500 gap-x-4 cursor-pointer p-2 hover:shadow-md rounded-bl-lg ${
                       icons.gap ? "mt-9" : "mt-2"
                     }`}
                   >
