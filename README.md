@@ -1,70 +1,185 @@
-# Getting Started with Create React App
+# 📗 Table of Contents
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 Exotic Rentals API ](#-exotic-rentals-api-)
+  - [API Documentation](#api-documentation)
+  - [Frontend](#frontend)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+    - [Deployment](#deployment)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📖 Exotic Rentals API <a name="about-project"></a>
 
-## Available Scripts
+**Rental a Car** is a  a car rental application. It allows users to create an account, login, and book a car for a specific period of time. It also allows users to view all available cars, and view a specific car. It also allows users to view all bookings made by a specific user.
 
-In the project directory, you can run:
+## API Documentation
+[Link to API Documentation](https://documenter.getpostman.com/view/26130158/2s93CUG9HF)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠 Built With <a name="built-with"></a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Tech Stack <a name="tech-stack"></a>
 
-### `npm test`
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+  </ul>
+</details>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<details>
+  <summary>State Management</summary>
+  <ul>
+     <li><a href="https://redux.org/">Redux</a></li>
+  </ul>
+</details>
 
-### `npm run build`
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Key Features <a name="key-features"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Redux state management**
+- **External API usage**
+- **User signup**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### `npm run eject`
+## 🚀 Live Demo <a name="live-demo"></a>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [Live Demo Link]()
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 💻 Getting Started <a name="getting-started"></a>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To get a local copy up and running, follow these steps.
 
-## Learn More
+### Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+In order to run this project you need:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+ gem install rails
+```
 
-### Code Splitting
+### Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Clone this repository to your desired folder:
 
-### Analyzing the Bundle Size
+```sh
+  cd my-folder
+  git clone git@github.com:didierganthier/rent-a-car.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Install
 
-### Making a Progressive Web App
+```sh
+  cd car-rental-app
+  npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Usage
 
-### Advanced Configuration
+To run the project, execute the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```sh
+  npm start
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  npm test
+```
+```
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+You can deploy this project using:
 
-### `npm run build` fails to minify
+```sh
+  git push heroku main
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Didier Peran Ganthier**
+
+- GitHub: [@didierganthier](https://github.com/didierganthier)
+- Twitter: [@didierganthier_](https://twitter.com/didierganthier_)
+- LinkedIn: [Didier Peran Ganthierr](https://linkedin.com/in/didierganthier)
+
+👤 **Habeeb Musa Efiamotu**
+
+- GitHub: [@githubhandle](https://github.com/Efiamotu-1)
+- Twitter: [@twitterhandle](https://twitter.com/EFYAMOTU)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/musa-habeeb/)
+
+👤 **Shedrack Sunday**
+
+- GitHub: [@Shedraxk-Sunday](https://github.com/Shedrack-Sunday)
+- Twitter: [@DeleSundayS](https://twitter.com/DeleSundayS)
+- LinkedIn: [Shedrack-Sunday](https://linkedin.com/in/Shedrack-Sunday)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+
+- [ ] **It will allow users to rent a car.**
+- [ ] **It will allows users to give a review for a specific car.**
+- [ ] **Allow summary of review on a ceratin period**
+  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project consider giving it a star ⭐️.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank Microverse for giving me the opportunity to work on this project.
+
+
+- Microverse
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
