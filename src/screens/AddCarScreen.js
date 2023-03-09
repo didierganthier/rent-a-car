@@ -46,13 +46,13 @@ const AddCarScreen = ({ currentItems }) => {
           </NavLink>
           <div className="p-2">
             <div className="flex gap-4 justify-end">
-              <button
+              {/* <button
                 type="button"
                 onClick={() => navigate(`/editCar/${car.id}`)}
                 className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
               >
                 Edit
-              </button>
+              </button> */}
               <button
                 type="button"
                 onClick={() => handleDelete(car.id)}
@@ -70,9 +70,7 @@ const AddCarScreen = ({ currentItems }) => {
       lg:mt-[90px]
       "
     >
-      /**
-        Instead of a plus button, you can create a navigation on the side where users can click to add cars and it would route to add cars 
-        */
+      
       <NavLink
         to="/addCar"
         className="flex flex-wrap no-underline hover:no-underline text-blue-600 font-bold text-3xl py-10 px-4"

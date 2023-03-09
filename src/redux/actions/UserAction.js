@@ -14,7 +14,7 @@ const login = (email, password) => async (dispatch) => {
 
     const { data } = await axios({
       method: 'post',
-      url: 'http://127.0.0.1:3000/login',
+      url: 'https://rentcars.onrender.com/login',
       data: { user: { email, password } },
       config,
     });
@@ -44,7 +44,7 @@ const register = (formData) => async (dispatch) => {
 
     const { data } = await axios({
       method: 'post',
-      url: 'http://127.0.0.1:3000/signup',
+      url: 'https://rentcars.onrender.com/signup',
       data: formData,
       config,
     });
