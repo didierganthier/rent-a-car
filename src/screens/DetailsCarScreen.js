@@ -67,7 +67,7 @@ const DetailsCarScreen = () => {
               <div class="my-6 flex justify-center">
                 <button type="button" class="bg-blue-500 text-white hover:bg-blue-400 px-6 py-2 rounded-full font-semibold transition-colors border-2 border-transparent">
                   <div class="flex items-center gap-4 justify-center">
-                    <span>Reserve</span>
+                    <span onClick={() => setBooking(true)}>Reserve</span>
                     <BsArrowRightCircleFill />
                   </div>
                 </button>
