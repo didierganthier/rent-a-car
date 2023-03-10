@@ -99,9 +99,6 @@ const HomeScreen = () => {
                     {car.name}
                   </h3>
                   <p className="card-text">{truncate(car.description, 100)}</p>
-                  <button className="bg-[#da2525] text-white px-4 py-2 rounded-full mt-4" onClick={() => handleDelete(car.id)}>
-                    Delete
-                  </button>
                 </div>
               </NavLink>
             </SwiperSlide>
