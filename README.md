@@ -1,8 +1,9 @@
 # 📗 Table of Contents
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Exotic Rentals API ](#-exotic-rentals-api-)
+- [📖 Exotic Rentals APP ](#-exotic-rentals-api-)
+  - [Kanban Board](#kanban-board)
   - [API Documentation](#api-documentation)
-  - [Frontend](#frontend)
+  - [Backend](#frontend)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -21,13 +22,29 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-# 📖 Exotic Rentals API <a name="about-project"></a>
+# 📖 Exotic Rentals APP <a name="about-project"></a>
 
 **Rental a Car** is a  a car rental application. It allows users to create an account, login, and book a car for a specific period of time. It also allows users to view all available cars, and view a specific car. It also allows users to view all bookings made by a specific user.
 
-## API Documentation
+## Kanban Board <a name="kanban-board"></a>
+Collaboration team is made of 3 members:
+ - Didier Peran Ganthier
+ - Habeeb Efiamotu Musa
+ - Shedrack Sunday
+ 
+ Kanban can be found [here](https://github.com/users/didierganthier/projects/7/views/1)
+
+Initial state of Kanban board 👇 
+![Screenshot 2023-03-09 at 19 34 45](https://user-images.githubusercontent.com/45739963/224192939-dfdad994-cc58-48ac-8bf7-612ab5bc73e6.png)
+
+![Screenshot 2023-03-09 at 19 35 35](https://user-images.githubusercontent.com/45739963/224193040-87efccff-599e-466e-bc9b-1f6a70e228a7.png)
+
+
+## API Documentation <a name="api-documentation"></a>
 [Link to API Documentation](https://documenter.getpostman.com/view/26130158/2s93CUG9HF)
 
+## Backend <a name="backend"></a>
+Backend app can be found [here](https://github.com/didierganthier/rent-a-car-backend)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -64,7 +81,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
+- [Live Demo Link](https://rent-a-car-seven.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
