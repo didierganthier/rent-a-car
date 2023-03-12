@@ -128,7 +128,6 @@ To run tests, run the following command:
 ```sh
   npm test
 ```
-```
 
 ### Deployment
 
